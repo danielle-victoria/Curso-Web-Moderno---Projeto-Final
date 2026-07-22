@@ -3,6 +3,7 @@
 // ( implementacao no versao-inicial)
 
 /* Aula 12 Projeto Base de Conhecimento - Backend: API de Usuário */
+/* Aula 13 Projeto Base de Conhecimento - Backend: Desafio Obter Usuário Por ID*/
 
 module.exports = app => {
     app.route('/users')
@@ -11,6 +12,6 @@ module.exports = app => {
 
     app.route('/users/:id')
         .put(app.api.user.save)
-        //.get(app.api.user.getById)
+        .get(app.api.user.getById)
         //.delete(app.api.user.remove)    
 }
