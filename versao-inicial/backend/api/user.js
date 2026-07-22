@@ -61,7 +61,7 @@ module.exports = app => {
     
     /* Aula 13 Projeto Base de Conhecimento - Backend: Desafio Obter Usuário Por ID */
     
-    const getById = (req, res) => {
+    const getById = (req, res) => { /*Aula 14 - Não será usado no sistema, mas foi implementado para fins de aprendizado */
         app.db('users')
             .select('id', 'name', 'email', 'admin')
             .where({ id: req.params.id })

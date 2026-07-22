@@ -12,6 +12,6 @@ module.exports = app => {
 
     app.route('/users/:id')
         .put(app.api.user.save)
-        .get(app.api.user.getById)
+        .get(app.api.user.getById) //Não será usado no sistema, mas foi implementado para fins de aprendizado
         //.delete(app.api.user.remove)    
 }
