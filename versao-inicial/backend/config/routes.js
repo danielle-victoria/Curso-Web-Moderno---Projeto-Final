@@ -13,5 +13,18 @@ module.exports = app => {
     app.route('/users/:id')
         .put(app.api.user.save)
         .get(app.api.user.getById) //Não será usado no sistema, mas foi implementado para fins de aprendizado
-        //.delete(app.api.user.remove)    
+        //.delete(app.api.user.remove)  
+    
+    /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */
+    app.route('/categories')
+        //.put(app.api.category.save)
+        .get(app.api.category.get)
+        .post(app.api.category.save)
+        //.delete(app.api.category.remove)
+
+    /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */
+    app.route('/categories/:id')
+        .get(app.api.category.getById)
+        .put(app.api.category.save)
+        .delete(app.api.category.remove)
 }
