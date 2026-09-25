@@ -92,5 +92,29 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    return { save, remove, get, getById }
+
+    /* Aula 16 Projeto Base de Conhecimento - Backend: API de Categoria #02 */
+
+    const toTree = (categories, tree) => {
+        if(!tree) tree = categories.filter(c => !c.parentId) /* Aula 16 Projeto Base de Conhecimento - Backend: API de Categoria #02 */
+
+        tree = tree.map(parentNode => {
+            const isChild = node => node.parentId == parentNode.id
+            parentNode.children = toTree(categories, categories.filter(isChild))
+            return parentNode
+            
+        })
+
+        return tree
+    }
+
+    /* Aula 16 Projeto Base de Conhecimento - Backend: API de Categoria #02*/
+
+    const getTree = (req, res) => {
+        app.db('categories')
+            .then(categories => res.json(toTree(categories)))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { save, remove, get, getById, getTree }
 }
