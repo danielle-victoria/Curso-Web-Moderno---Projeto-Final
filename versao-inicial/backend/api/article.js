@@ -1,3 +1,5 @@
+const queries = require('./queries') /* Aula 18 Projeto Base de Conhecimento - Backend: API de Artigo #02 */
+
 /* Aula 17 Projeto Base de Conhecimento - Backend: API de Artigo #01 */
 
 module.exports = app => {
@@ -72,7 +74,26 @@ module.exports = app => {
                 return res.json(article)
             })
             .catch(err => res.status(500).send(err))
-    }  
+    } 
     
-    return { save, remove, get, getById }   
+    
+    /* Aula 18 Projeto Base de Conhecimento - Backend: API de Artigo #02 */
+
+    const getByCategory = async (req, res) => {
+        const categoryId = req.params.id
+        const page = req.query.page || 1
+        const categories = await app.db.raw(queries.categoryWithChildren, categoryId) // Aula 18 Projeto Base de Conhecimento - Backend: API de Artigo #02
+        const ids = categories.rows.map(c => c.id) // Aula 18 Projeto Base de Conhecimento - Backend: API de Artigo #02
+    
+        app.db({ a: 'articles', u: 'users' })
+            .select('a.id', 'a.name', 'a.description', 'a.imageUrl', { author: 'u.name' })
+            .limit(limit).offset(page * limit - limit)
+            .whereRaw('?? = ??', ['u.id', 'a.userId'])
+            .whereIn('a.categoryId', ids)
+            .orderBy('a.id', 'desc')
+            .then(articles => res.json(articles))
+            .catch(err => res.status(500).send(err))
+    }
+    
+    return { save, remove, get, getById, getByCategory   }   
 }    

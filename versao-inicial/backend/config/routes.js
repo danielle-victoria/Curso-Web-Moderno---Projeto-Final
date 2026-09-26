@@ -45,4 +45,9 @@ module.exports = app => {
         .get(app.api.article.getById)
         .put(app.api.article.save)
         .delete(app.api.article.remove)
+
+
+    /* Aula 18 Projeto Base de Conhecimento - Backend: API de Artigo #02 */
+    app.route('/categories/:id/articles')
+        .get(app.api.article.getByCategory)
 }
