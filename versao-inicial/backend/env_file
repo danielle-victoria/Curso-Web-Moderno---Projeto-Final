@@ -1,3 +1,10 @@
 module.exports = {
-    authSecret: ''
+    authSecret: '',
+    db: {                           /*Aula 25 Projeto Base de Conhecimento - Backend: Informações de Conexão  no .env  */
+        host: '127.0.0.1',
+        port: 5432,
+        database: 'knowledge',
+        user: 'postgres',
+        password: 'senha'
+    }
 }
