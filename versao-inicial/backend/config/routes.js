@@ -6,6 +6,12 @@
 /* Aula 13 Projeto Base de Conhecimento - Backend: Desafio Obter Usuário Por ID*/
 
 module.exports = app => {
+
+    // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
+    app.post('/signup', app.api.user.save) // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
+    app.post('/signin', app.api.auth.signin) // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
+    app.post('/validateToken', app.api.auth.validateToken) // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
+
     app.route('/users')
         .post(app.api.user.save)
         .get(app.api.user.get)
