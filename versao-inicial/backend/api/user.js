@@ -42,6 +42,7 @@ module.exports = app => {
             app.db('users')
                 .update(user)
                 .where({ id: user.id })
+                .whereNull('deleted_at') /* Aula 24 Projeto Base de Conhecimento - Backend: Soft Delete de Usuário */
                 .then(_ => res.status(204).send())
                 .catch(err => res.status(500).send(err))
         }else{
@@ -55,6 +56,7 @@ module.exports = app => {
     const get = (req, res) => {
         app.db('users')
             .select('id', 'name', 'email', 'admin')
+            .whereNull('deleted_at') /* Aula 24 Projeto Base de Conhecimento - Backend: Soft Delete de Usuário */
             .then(users => res.json(users))
             .catch(err => res.status(500).send(err))
     } 
@@ -65,10 +67,30 @@ module.exports = app => {
         app.db('users')
             .select('id', 'name', 'email', 'admin')
             .where({ id: req.params.id })
+            .whereNull('deleted_at') /* Aula 24 Projeto Base de Conhecimento - Backend: Soft Delete de Usuário */
             .first()
             .then(user => res.json(user))
             .catch(err => res.status(500).send(err))
     }
 
-    return { save, get, getById } 
+    /* Aula 24 Projeto Base de Conhecimento - Backend: Soft Delete de Usuário */
+    const remove = async (req, res) => {
+        try {
+            const articles = await app.db('articles')
+                .where({ userId: req.params.id })
+            notExistsOrError(articles, 'Usuário possui artigos.')
+            
+            const rowsUpdated = await app.db('users')
+                .update({ deleted_at: new Date() })
+                .where({ id: req.params.id })
+            existsOrError(rowsUpdated, 'Usuário não foi encontrado.')
+
+            res.status(204).send()
+
+        } catch (msg) {
+            return res.status(400).send(msg)
+        }
+    }
+
+    return { save, get, getById, remove } 
 }

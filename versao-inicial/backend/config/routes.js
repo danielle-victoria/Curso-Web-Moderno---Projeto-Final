@@ -22,7 +22,8 @@ module.exports = app => {
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
         .put(admin(app.api.user.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
         .get(admin(app.api.user.getById)) //Não será usado no sistema, mas foi implementado para fins de aprendizado
-        //.delete(app.api.user.remove)  
+        //.delete(app.api.user.remove)\
+        .delete(admin(app.api.user.remove)) // Aula 24 Projeto Base de Conhecimento - Backend: Soft Delete de Usuário     
     
     /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */
     app.route('/categories')
