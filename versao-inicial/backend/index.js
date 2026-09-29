@@ -18,6 +18,7 @@ consign()
     .then('./config/middlewares.js')
     .then('./api/validation.js')
     .then('./api')
+    .then('./schedule') /* Aula 23 Projeto Base de Conhecimento - Backend: Integrando Bancos com Scheduler */  
     .then('./config/routes.js')
     .into(app)
 
