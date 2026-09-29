@@ -5,8 +5,13 @@
 const app = require('express')()
 const consign = require('consign')
 const db = require('./config/db')
+const mongoose = require('mongoose') /* Aula 22 Projeto Base de Conhecimento - Backend: API de Estatísticas (Mongo DB) */
+
+require('./config/mongodb') /* Aula 22 Projeto Base de Conhecimento - Backend: API de Estatísticas (Mongo DB) */
+
 
 app.db = db
+app.mongoose = mongoose /* Aula 22 Projeto Base de Conhecimento - Backend: API de Estatísticas (Mongo DB) */
 
 consign()
     .include('./config/passport.js')

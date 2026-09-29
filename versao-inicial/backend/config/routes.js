@@ -65,4 +65,9 @@ module.exports = app => {
     app.route('/categories/:id/articles')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
         .get(app.api.article.getByCategory)
+
+    /* Aula 22 Projeto Base de Conhecimento - Backend: API de Estatísticas (Mongo DB) */
+    app.route('/stats')
+        .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
+        .get(app.api.stat.get) // Aula 22 Projeto Base de Conhecimento - Backend: API de Estatísticas (Mongo DB)
 }
