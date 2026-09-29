@@ -5,6 +5,7 @@
 /* Aula 12 Projeto Base de Conhecimento - Backend: API de Usuário */
 /* Aula 13 Projeto Base de Conhecimento - Backend: Desafio Obter Usuário Por ID*/
 
+const admin = require('./admin') // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
 module.exports = app => {
 
     // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
@@ -14,21 +15,21 @@ module.exports = app => {
 
     app.route('/users')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
-        .post(app.api.user.save)
-        .get(app.api.user.get)
+        .post(admin(app.api.user.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
+        .get(admin(app.api.user.get)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
-        .put(app.api.user.save)
-        .get(app.api.user.getById) //Não será usado no sistema, mas foi implementado para fins de aprendizado
+        .put(admin(app.api.user.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
+        .get(admin(app.api.user.getById)) //Não será usado no sistema, mas foi implementado para fins de aprendizado
         //.delete(app.api.user.remove)  
     
     /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */
     app.route('/categories')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
         //.put(app.api.category.save)
-        .get(app.api.category.get)
-        .post(app.api.category.save)
+        .get(admin(app.api.category.get))
+        .post(admin(app.api.category.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador  
         //.delete(app.api.category.remove)
 
     /* Aula 16 Projeto Base de Conhecimento - Backend: API de Categoria #02 */
@@ -42,22 +43,22 @@ module.exports = app => {
     app.route('/categories/:id')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
         .get(app.api.category.getById)
-        .put(app.api.category.save)
-        .delete(app.api.category.remove)
+        .put(admin(app.api.category.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
+        .delete(admin(app.api.category.remove)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
 
 
     /* Aula 17 Projeto Base de Conhecimento - Backend: API de Artigo #01 */
     app.route('/articles')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
-        .get(app.api.article.get)    
-        .post(app.api.article.save)
+        .get(admin(app.api.article.get))    // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador  
+        .post(admin(app.api.article.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
        
 
     app.route('/articles/:id')
         .all(app.config.passport.authenticate()) // Aula 20 Projeto Base de Conhecimento - Backend: Protegendo a API com Passport
         .get(app.api.article.getById)
-        .put(app.api.article.save)
-        .delete(app.api.article.remove)
+        .put(admin(app.api.article.save)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador    
+        .delete(admin(app.api.article.remove)) // Aula 21 Projeto Base de Conhecimento - Backend: Validando Usuário Administrador
 
 
     /* Aula 18 Projeto Base de Conhecimento - Backend: API de Artigo #02 */
