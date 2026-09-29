@@ -17,6 +17,9 @@ module.exports = app => {
     const save = async (req, res) => {
         const user = { ...req.body } /* Aula 12 Projeto Base de Conhecimento - Backend: API de Usuário */   
         if(req.params.id) user.id = req.params.id /* Aula 12 Projeto Base de Conhecimento - Backend: API de Usuário */
+
+        if(!req.originalUrl.startsWith('/users')) user.admin = false /*Aula 26 Projeto Base de Conhecimento - Backend: Validar Cadastro de Administradores */
+        if(!req.user || !req.user.admin) user.admin = false /*Aula 26 Projeto Base de Conhecimento - Backend: Validar Cadastro de Administradores */
         
         try {
             existsOrError(user.name, 'Nome não informado')      
