@@ -1,6 +1,9 @@
+<!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
+<!-- Aula 2 Projeto Base de Conhecimento - Frontend: Componente Cabeçalho -->
+
 <template>
 	<div id="app">
-		<Header />
+		<Header title="Cod3r - Base de Conhecimento" :hideToggle="false" />
 		<Menu />
 		<Content />
 		<Footer />	
