@@ -1,6 +1,7 @@
 <!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
 <!-- Aula 2 Projeto Base de Conhecimento - Frontend: Componente Cabeçalho -->
 <!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
+<!-- Aula 4 Projeto Base de Conhecimento - Frontend: Componente Menu do Usuário -->
 
 
 <template>
@@ -11,15 +12,22 @@
         <h1 class="title">
             {{ title }}
         </h1>
+        <UserDropdown v-if="!hideUserDropdown" />
     </header>
 </template>
 
 <script>
+import UserDropdown from './UserDropdown'
+
 export default {
 	name: "Header",
+    components: {
+        UserDropdown
+    },
     props: {     
         title: String,
         hideToggle: Boolean,
+        hideUserDropdown: Boolean
             
     },
     computed: {
@@ -75,6 +83,7 @@ export default {
     }
 
     header.header > a.toggle:hover {
+        color: #FFF;
         background: rgba(0, 0, 0, 0.2);
     }
 
