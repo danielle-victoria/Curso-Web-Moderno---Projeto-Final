@@ -1,13 +1,19 @@
 <!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
+<!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
+
 
 <template>
-	<aside class="menu">
+	<aside class="menu" v-show="isMenuVisible">
+        <slot></slot>
     </aside>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
 	name: "Menu",
+    computed: mapState(['isMenuVisible']),
 }
 </script>
 

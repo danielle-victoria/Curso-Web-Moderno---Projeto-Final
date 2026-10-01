@@ -1,5 +1,7 @@
 <!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
 <!-- Aula 2 Projeto Base de Conhecimento - Frontend: Componente Cabeçalho -->
+<!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
+
 
 <template>
 	<header class="header">
@@ -22,12 +24,14 @@ export default {
     },
     computed: {
         icon() {
-            return "fa-angle-left"
+            //"fa-angle-left"
+            return this.$store.state.isMenuVisible ? "fa-angle-left" : "fa-angle-down"
         }
     },
     methods: {
         toggleMenu() {
             //this.$emit('toggle-menu')
+            this.$store.commit('toggleMenu')
         }
     }   
 }
