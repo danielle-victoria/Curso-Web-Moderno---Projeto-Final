@@ -1,6 +1,6 @@
 <!-- Aula 5 Projeto Base de Conhecimento - Frontend: Componente Título da Página -->
 
-.<template>
+<template>
   
     <div class="page-title">
         <h1><i v-if="icon" :class="icon"></i> {{ main }}</h1>

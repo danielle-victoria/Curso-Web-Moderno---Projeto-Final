@@ -2,6 +2,7 @@
 <!-- Aula 2 Projeto Base de Conhecimento - Frontend: Componente Cabeçalho -->
 <!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
 <!-- Aula 4 Projeto Base de Conhecimento - Frontend: Componente Menu do Usuário -->
+<!-- Aula 6 Projeto Base de Conhecimento - Frontend: Router -->
 
 
 <template>
@@ -10,7 +11,7 @@
             <i class="fa fa-lg" :class="icon"></i>
         </a>
         <h1 class="title">
-            {{ title }}
+            <router-link to="/">{{ title }}</router-link>   
         </h1>
         <UserDropdown v-if="!hideUserDropdown" />
     </header>
@@ -70,6 +71,10 @@ export default {
         text-decoration: none;
     }   
 
+    .title a:hover {
+            color: #FFF;
+            text-decoration: none;
+        }   
     header.header > a.toggle {
        width: 60px;
        height: 100%;

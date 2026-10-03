@@ -1,8 +1,11 @@
 <!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
+<!-- Aula 6 Projeto Base de Conhecimento - Frontend: Router -->
 
 
 <template>
-	<div class="content"></div>
+	<div class="content">
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
