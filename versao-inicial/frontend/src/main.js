@@ -10,6 +10,7 @@ import 'font-awesome/css/font-awesome.css'
 import Vue from 'vue'
 
 import App from './App'
+//import axios from 'axios'
 
 import './config/bootstrap'
 import store from './config/store'
@@ -18,7 +19,9 @@ import router from './config/router'
 Vue.config.productionTip = false
 
 //TEMPORÁRIO!
-require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwibmFtZSI6Ikpvw6NvIiwiZW1haWwiOiJKb8Ojb0AxMjMuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE3OTA5OTA3NzQsImV4cCI6MTc5MTI0OTk3NH0.q0d2kLAUKuy1ttzZpBpRqCN0p3ulOVRqMHyuqCw6nhQ'
+require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTMzMDc2OSwiZXhwIjoxNzkxNTg5OTY5fQ.L0pfjj7cDwNbLIWrCP0s7xw9yNoF_2CBrxwO8qnGJWA'
+
+//axios.defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTMzMDc2OSwiZXhwIjoxNzkxNTg5OTY5fQ.L0pfjj7cDwNbLIWrCP0s7xw9yNoF_2CBrxwO8qnGJWA'
 
 
 new Vue({
