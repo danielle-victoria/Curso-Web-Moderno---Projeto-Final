@@ -20,7 +20,7 @@
 import PageTitle from '@/components/template/PageTitle'
 import Stat from '@/components/home/Stat'
 import axios from 'axios'
-import { baseUrl } from '@/global'
+import { baseApiUrl } from '@/global'
 
 export default {
     name: 'Home',
@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         getStats() {
-            axios.get(`${baseUrl}/stats`)
+            axios.get(`${baseApiUrl}/stats`)
                 .then(res => 
                     this.stat = res.data
                 )
