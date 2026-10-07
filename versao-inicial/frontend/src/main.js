@@ -3,6 +3,7 @@
 /* Aula 4 Projeto Base de Conhecimento - Frontend: Componente Menu do Usuário */
 /* Aula 6 Projeto Base de Conhecimento - Frontend: Router */
 /* Aula 7 Projeto Base de Conhecimento - Frontend: Componente Home */
+/* Aula 10 Projeto Base de Conhecimento - Frontend: Configurando o Vue Toasted */
 
 
 import 'font-awesome/css/font-awesome.css'
@@ -13,6 +14,7 @@ import App from './App'
 //import axios from 'axios'
 
 import './config/bootstrap'
+import './config/msgs'
 import store from './config/store'
 import router from './config/router'
 
