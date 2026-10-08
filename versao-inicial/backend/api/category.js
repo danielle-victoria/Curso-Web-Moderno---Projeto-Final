@@ -1,10 +1,17 @@
 /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */
+/* Aula 13 Projeto Base de Conhecimento - Frontend: Cadastro de Categoria #01 */
 
 module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.validation 
     
     const save = (req, res) => {
-        const category = { ...req.body } /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */ 
+        //const category = { ...req.body } /* Aula 15 Projeto Base de Conhecimento - API de Categoria #01 */ 
+        /* Aula 13 Projeto Base de Conhecimento - Frontend: Cadastro de Categoria #01 */
+        const category = {
+            id: req.body.id,
+            name: req.body.name,
+            parentId: req.body.parentId
+        } 
         if(req.params.id) category.id = req.params.id
 
         try {
