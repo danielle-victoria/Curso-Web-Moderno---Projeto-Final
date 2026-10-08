@@ -1,5 +1,6 @@
 /* Aula 7 Projeto Base de Conhecimento - Frontend: Componente Home */
 /* Aula 10 Projeto Base de Conhecimento - Frontend: Configurando o Vue Toasted */
+import Vue from 'vue'
 
 export const baseApiUrl = 'http://localhost:3000'
 
