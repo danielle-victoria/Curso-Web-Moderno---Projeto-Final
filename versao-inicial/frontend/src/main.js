@@ -21,7 +21,7 @@ import router from './config/router'
 Vue.config.productionTip = false
 
 //TEMPORÁRIO!
-require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTMzMDc2OSwiZXhwIjoxNzkxNTg5OTY5fQ.L0pfjj7cDwNbLIWrCP0s7xw9yNoF_2CBrxwO8qnGJWA'
+require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTY3MDY5MiwiZXhwIjoxNzkxOTI5ODkyfQ.h_0nbFAG5ckhV4qaN4yHkXRA8I-ktiSjuSkm5IzBiKE'
 
 //axios.defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTMzMDc2OSwiZXhwIjoxNzkxNTg5OTY5fQ.L0pfjj7cDwNbLIWrCP0s7xw9yNoF_2CBrxwO8qnGJWA'
 
