@@ -1,6 +1,7 @@
 <!-- Aula 17 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #01 -->
 <!-- Aula 18 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #02 -->
 <!-- Aula 20 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #03 -->
+<!-- <!-- Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02 -->
 
 
 <template>
@@ -54,6 +55,17 @@ export default {
 
                 if(res.data.length === 0) this.loadMore = false
             })
+        }
+    },
+    watch: {  /* Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02  */
+        $route(to) {
+            this.category.id = to.params.id
+            this.articles = []
+            this.page = 1
+            this.loadMore = true
+
+            this.getCategory()
+            this.getArticles()
         }
     },
     mounted() {

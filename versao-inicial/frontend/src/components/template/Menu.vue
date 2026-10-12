@@ -1,6 +1,7 @@
 <!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
 <!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
 <!-- Aula 21 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #01 -->
+<!-- Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02 -->
 
 <template>
 	<aside class="menu" v-show="isMenuVisible">
@@ -41,7 +42,16 @@ export default {
         getTreeData() {
             const url = `${baseApiUrl}/categories/tree`
             return axios.get(url).then(res => res.data)
+        },
+        onNodeSelect(node) { /* Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02 */
+            this.$router.push({
+                name: 'articleByCategory',
+                params: { id: node.id }
+            })
         }
+    },
+    mounted() {
+        this.$refs.tree.$on('node:selected', this.onNodeSelect)
     }
 }
 </script>
