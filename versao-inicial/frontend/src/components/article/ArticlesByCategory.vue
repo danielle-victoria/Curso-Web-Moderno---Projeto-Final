@@ -1,5 +1,7 @@
 <!-- Aula 17 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #01 -->
 <!-- Aula 18 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #02 -->
+<!-- Aula 20 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #03 -->
+
 
 <template>
     <div class="articles-by-category">
@@ -7,7 +9,8 @@
             :main="category.name" sub="Categoria" />
         <ul>
             <li v-for="article in articles" :key="article.id">
-                {{ article.name }}
+                <ArticleItem :article="article" />
+                
             </li>
             
         </ul>
@@ -24,11 +27,11 @@
 import { baseApiUrl } from '@/global'
 import axios from 'axios'
 import PageTitle from '../template/PageTitle'
-
+import ArticleItem from './ArticleItem'
 
 export default {
     name: 'ArticlesByCategory',
-    components: { PageTitle },
+    components: { PageTitle, ArticleItem },
     data: function() {
         return {
             category: {},
