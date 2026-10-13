@@ -9,12 +9,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state: {    
-        isMenuVisible: true,
+    state: {  
+        isMenuVisible: false,
+        user: null
+        
+        /*isMenuVisible: true,
         user: {
             name: 'Usuário Mock',
             email: 'mock@example.com'
-        }
+        }*/
     },
     mutations: {
         toggleMenu(state, isVisible) {

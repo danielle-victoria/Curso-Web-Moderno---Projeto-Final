@@ -4,7 +4,7 @@
 <!-- Aula 23 Projeto Base de Conhecimento - Frontend: Autenticação: Alterando Store -->
 
 <template>
-	<div id="app" :class="{'hide-menu': !isMenuVisible}">
+	<div id="app" :class="{'hide-menu': !isMenuVisible || !user}">
 		<Header title="Cod3r - Base de Conhecimento" 
 			:hideToggle="!user"
 			:hideUserDropdown="!user" />
@@ -29,7 +29,7 @@ export default {
 		Content,
 		Footer
 	},
-	computed: mapState(['isMenuVisible'])
+	computed: mapState(['isMenuVisible', 'user'])
 }
 </script>
 	
