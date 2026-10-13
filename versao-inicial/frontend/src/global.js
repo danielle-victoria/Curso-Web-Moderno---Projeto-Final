@@ -1,7 +1,10 @@
 /* Aula 7 Projeto Base de Conhecimento - Frontend: Componente Home */
 /* Aula 10 Projeto Base de Conhecimento - Frontend: Configurando o Vue Toasted */
+/* Aula 24 Projeto Base de Conhecimento - Frontend: Autenticação: Tela de Login/Cadastro */
+
 import Vue from 'vue'
 
+export const  userKey = '__knowledge_user'
 export const baseApiUrl = 'http://localhost:3000'
 
 export function showError(e) {
