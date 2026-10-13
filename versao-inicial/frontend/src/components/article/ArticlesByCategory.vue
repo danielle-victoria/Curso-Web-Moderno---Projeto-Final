@@ -1,7 +1,7 @@
 <!-- Aula 17 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #01 -->
 <!-- Aula 18 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #02 -->
 <!-- Aula 20 Projeto Base de Conhecimento - Frontend: Artigos Por Categoria #03 -->
-<!-- <!-- Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02 -->
+<!-- Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02 -->
 
 
 <template>

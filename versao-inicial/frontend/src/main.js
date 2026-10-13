@@ -4,6 +4,7 @@
 /* Aula 6 Projeto Base de Conhecimento - Frontend: Router */
 /* Aula 7 Projeto Base de Conhecimento - Frontend: Componente Home */
 /* Aula 10 Projeto Base de Conhecimento - Frontend: Configurando o Vue Toasted */
+/* Aula 23 Projeto Base de Conhecimento - Frontend: Autenticação: Alterando Store */
 
 
 import 'font-awesome/css/font-awesome.css'
@@ -21,7 +22,8 @@ import router from './config/router'
 Vue.config.productionTip = false
 
 //TEMPORÁRIO!
-require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTY3MDY5MiwiZXhwIjoxNzkxOTI5ODkyfQ.h_0nbFAG5ckhV4qaN4yHkXRA8I-ktiSjuSkm5IzBiKE'
+/* Foi retirado após a alteração do store - aula 23 */
+//require('axios').defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTY3MDY5MiwiZXhwIjoxNzkxOTI5ODkyfQ.h_0nbFAG5ckhV4qaN4yHkXRA8I-ktiSjuSkm5IzBiKE'
 
 //axios.defaults.headers.common['Authorization'] = 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJNYXJpYUAxMjMuY29tIiwiYWRtaW4iOnRydWUsImlhdCI6MTc5MTMzMDc2OSwiZXhwIjoxNzkxNTg5OTY5fQ.L0pfjj7cDwNbLIWrCP0s7xw9yNoF_2CBrxwO8qnGJWA'
 

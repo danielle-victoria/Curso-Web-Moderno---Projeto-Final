@@ -1,14 +1,14 @@
 <!-- Aula 1 Projeto Base de Conhecimento - Frontend: Estrutura Inicial do Template -->
 <!-- Aula 2 Projeto Base de Conhecimento - Frontend: Componente Cabeçalho -->
 <!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
-
+<!-- Aula 23 Projeto Base de Conhecimento - Frontend: Autenticação: Alterando Store -->
 
 <template>
 	<div id="app" :class="{'hide-menu': !isMenuVisible}">
 		<Header title="Cod3r - Base de Conhecimento" 
-			:hideToggle="false"
-			:hideUserDropdown="false" />
-		<Menu />
+			:hideToggle="!user"
+			:hideUserDropdown="!user" />
+		<Menu v-if="user"/>
 		<Content />
 		<Footer />	
 	</div>
