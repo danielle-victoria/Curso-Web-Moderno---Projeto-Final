@@ -4,6 +4,7 @@
 <!-- Aula 23 Projeto Base de Conhecimento - Frontend: Autenticação: Alterando Store -->
 <!-- Aula 26 Projeto Base de Conhecimento - Frontend: Autenticação: Validar Token #01 -->
 <!-- Aula 27 Projeto Base de Conhecimento - Frontend: Autenticação: Validar Token #02 -->
+<!-- Aula 31 Projeto Base de Conhecimento - Frontend: Responsividade do Menu -->
 
 <template>
 	<div id="app" :class="{'hide-menu': !isMenuVisible || !user}">
@@ -60,6 +61,10 @@ export default {
 
 			if(res.data){
 				this.$store.commit('setUser', userData)
+
+				if(this.$mq === 'xs' || this.$mq === 'sm') {
+					this.$store.commit('toggleMenu', false)
+				}
 			}else{
 				localStorage.removeItem(userKey)
 				this.$router.push({ name: 'auth' })

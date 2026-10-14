@@ -2,6 +2,8 @@
 <!-- Aula 3 Projeto Base de Conhecimento - Frontend: Visibilidade do  Menu (Toggle) -->
 <!-- Aula 21 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #01 -->
 <!-- Aula 22 Projeto Base de Conhecimento - Frontend: Menu da Aplicação #02 -->
+<!-- Aula 31 Projeto Base de Conhecimento - Frontend: Responsividade do Menu -->
+
 
 <template>
 	<aside class="menu" v-show="isMenuVisible">
@@ -48,6 +50,10 @@ export default {
                 name: 'articleByCategory',
                 params: { id: node.id }
             })
+
+            if(this.$mq === 'xs' || this.$mq === 'sm') {
+                this.$store.commit('toggleMenu', false)
+            }
         }
     },
     mounted() {
