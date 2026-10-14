@@ -5,6 +5,7 @@
 /* Aula 7 Projeto Base de Conhecimento - Frontend: Componente Home */
 /* Aula 10 Projeto Base de Conhecimento - Frontend: Configurando o Vue Toasted */
 /* Aula 23 Projeto Base de Conhecimento - Frontend: Autenticação: Alterando Store */
+/* Aula 29 Projeto Base de Conhecimento - Frontend: Autenticação: Token Expirado */
 
 
 import 'font-awesome/css/font-awesome.css'
@@ -16,6 +17,7 @@ import App from './App'
 
 import './config/bootstrap'
 import './config/msgs'
+import './config/axios'
 import store from './config/store'
 import router from './config/router'
 

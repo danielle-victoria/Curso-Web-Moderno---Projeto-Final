@@ -27,7 +27,10 @@ module.exports = app => {
             email: user.email,
             admin: user.admin,
             iat: now, // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
-            exp: now + (60 * 60 * 24 * 3) // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
+            //exp: now + (60 * 60 * 24 * 3) // Aula 19 Projeto Base de Conhecimento - Backend: API de Autenticação
+            /* Aula 29 Projeto Base de Conhecimento - Frontend: Autenticação: Token Expirado */
+            //exp: now + 10
+            exp: now + (60 * 60 * 24 * 3) // Aula 29 Projeto Base de Conhecimento - Frontend: Autenticação: Token Expirado
         }    
 
         res.json({
