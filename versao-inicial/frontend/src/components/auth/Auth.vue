@@ -42,14 +42,14 @@ export default {
                 .then(res => {
                     this.$store.commit('setUser', res.data)
                     localStorage.setItem(userKey, JSON.stringify(res.data))
-                    this.$router.push({ path: '/'})
+                    this.$router.push({ path: '/' })
                 })
                 .catch(showError)
         },
         signup() {
             axios.post(`${baseApiUrl}/signup`, this.user)
                 .then(() => {
-                    this.$toasted.global.defaultSucess()
+                    this.$toasted.global.defaultSuccess()
                     this.user = {}
                     this.showSignup = false
                 })
