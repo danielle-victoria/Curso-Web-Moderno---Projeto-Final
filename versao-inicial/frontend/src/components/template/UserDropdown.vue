@@ -1,7 +1,7 @@
 <!-- Aula 4 Projeto Base de Conhecimento - Frontend: Componente Menu do Usuário -->
 <!-- Aula 6 Projeto Base de Conhecimento - Frontend: Router -->
 <!-- Aula 25 Projeto Base de Conhecimento - Frontend: Autenticação: Logout -->
-
+<!-- Aula 28 Projeto Base de Conhecimento - Frontend: Autenticação: Validando Admin -->
 
 <template>
     <div class="user-dropdown">
@@ -13,7 +13,7 @@
             <i class="fa fa-angle-down"></i>    
         </div>
         <div class="user-dropdown-content">
-            <router-link to="/admin">
+            <router-link to="/admin" v-if="user.admin">
                 <i class="fa fa-cogs"></i> Administração
                 </router-link>
             <a href @click.prevent="logout">
