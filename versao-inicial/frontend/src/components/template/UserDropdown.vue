@@ -1,5 +1,7 @@
 <!-- Aula 4 Projeto Base de Conhecimento - Frontend: Componente Menu do Usuário -->
 <!-- Aula 6 Projeto Base de Conhecimento - Frontend: Router -->
+<!-- Aula 25 Projeto Base de Conhecimento - Frontend: Autenticação: Logout -->
+
 
 <template>
     <div class="user-dropdown">
@@ -14,7 +16,7 @@
             <router-link to="/admin">
                 <i class="fa fa-cogs"></i> Administração
                 </router-link>
-            <a href="S">
+            <a href @click.prevent="logout">
                 <i class="fa fa-sign-out"></i> Sair
             </a>
 
@@ -24,6 +26,7 @@
 </template>
 
 <script>
+import { userKey } from '@/global'
 import { mapState } from 'vuex'
 import Gravatar from 'vue-gravatar'
 
@@ -33,6 +36,13 @@ export default {
         Gravatar
     },
     computed: mapState(['user']),
+    methods: {
+        logout() {
+            localStorage.removeItem(userKey)
+            this.$store.commit('setUser', null)
+            this.$router.push({ name: 'auth'})
+        }
+    }
 }   
 
 </script>
